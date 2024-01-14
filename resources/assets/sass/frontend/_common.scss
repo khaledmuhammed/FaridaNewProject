@@ -1,0 +1,664 @@
+html, body {
+    font-family : Light;
+}
+
+.background-yellow {
+    background-color : $brand-warning !important;
+}
+
+.background-primary {
+    background-color : $brand-primary !important;
+}
+
+.background-secondary {
+    background-color : $brand-secondary !important;
+}
+
+.box {
+    background    : #fff;
+    // box-shadow    : 0 0 6px -2px $text-color;
+    overflow      : auto;
+    padding       : 10px;
+    // border-radius : 4px;
+}
+
+.float-right {
+    float : right;
+}
+
+.float-left {
+    float : left;
+}
+
+.margin-right {
+    margin-right : 15px;
+}
+
+.margin-bottom {
+    margin-bottom : 15px;
+}
+
+.layout-header {
+    min-height      : 100px;
+    display         : flex;
+    align-items     : center;
+    flex-wrap       : wrap;
+    justify-content : space-between;
+    .logo {
+        justify-self : right;
+        flex         : 1;
+    }
+    .search-component {
+        justify-self : center;
+        flex         : 1;
+        padding      : 0 30px;
+    }
+    .links {
+        justify-self : left;
+        flex         : 1;
+        display      : flex;
+        a {
+            flex : 1;
+        }
+
+    }
+}
+
+// .navbar {
+//     margin-bottom : 0;
+//     min-height    : 33px;
+//     border        : none !important;
+//     .navbar-nav a {
+//         padding-top    : 10px;
+//         padding-bottom : 10px;
+//         &:hover {
+//             background-color : #f6f6f6 !important;
+//         }
+//     }
+// }
+
+.no-margin {
+    margin : 0 !important;
+}
+
+.no-top-margin {
+    margin-top : 0 !important;
+}
+
+.no-padding {
+    padding : 0 !important;
+}
+
+.margin-top {
+    margin-top : 15px
+}
+
+.bg-red {
+    background-color : #bf1e2e !important;
+}
+
+.bg-white {
+    background-color : #fff !important;
+}
+
+.bg-gray {
+    background-color : #e1e1e1 !important;
+}
+
+.text-red, .text-red * {
+    color : $brand-danger !important;
+}
+
+.text-green, .text-green * {
+    color : #06b10b !important;
+}
+
+.text-white, .text-white * {
+    color : #fff !important;
+}
+
+.text-yellow, .text-yellow * {
+    color : $brand-warning !important;
+}
+
+.text-gray, .text-gray * {
+    color : #d2d6de !important;
+}
+
+.text-darkgray, .text-darkgray * {
+    color : #484848 !important;
+}
+
+.text-primary, .text-primary * {
+    color : $brand-primary !important;
+}
+
+.text-secondary, .text-secondary * {
+    color : $brand-secondary !important;
+}
+
+.text-tertiary, .text-tertiary * {
+    color : $brand-tertiary !important;
+}
+
+.text-info, .text-info * {
+    color : $brand-info !important;
+}
+
+.text-dark, .text-dark * {
+    color : $brand-dark !important;
+}
+
+.text-bold, .text-bold * {
+    font-weight : 700;
+}
+
+.font-light {
+    font-family : Light !important;
+}
+
+.radius-icon {
+    padding: 13.5px 0 9.5px 0;
+    width: 45px;
+    background: $brand-light;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.support-details {
+    .support-data {
+        margin: 3px 8px 0 0;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.categories {
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration  : none;
+        background-color : #4b0d13;
+    }
+}
+
+.sections {
+    .container {
+        margin-top : -35px;
+    }
+    .active {
+        color : #bf1e2e !important;
+    }
+    a {
+        line-height : 45px !important;
+        font-size   : 22px;
+    }
+}
+
+.card {
+    margin        : 25px auto;
+    padding       : 30px 10px;
+    box-shadow    : 1px 1px 8px -3px grey;
+    border-radius : 5px;
+    display       : flex;
+    align-items   : center;
+    img {
+        width : 100%;
+    }
+}
+
+footer {
+    .stores {
+        margin : 30px 0;
+        img {
+            width : 100%;
+        }
+    }
+    .nav {
+        a {
+            color : #000;
+        }
+    }
+    .shifts, .contacts {
+        line-height : 28px;
+    }
+}
+
+.no-border {
+    border : 0 !important;
+}
+
+.border-left {
+    border-left : 1px solid $brand-info;
+}
+
+.border-right {
+    border-right : 1px solid #999;
+}
+
+.btn-circle {
+    width         : 30px;
+    height        : 30px;
+    text-align    : center;
+    padding       : 6px 0;
+    font-size     : 12px;
+    line-height   : 1.428571429;
+    border-radius : 15px;
+}
+
+.btn-circle.btn-lg {
+    width         : 50px;
+    height        : 50px;
+    padding       : 10px 16px;
+    font-size     : 18px;
+    line-height   : 1.33;
+    border-radius : 25px;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: $brand-secondary;
+    border-color: darken($brand-secondary, 5%);
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: lighten($brand-secondary, 3%);
+}
+
+.btn-tertiary {
+    color: #fff;
+    background-color: $brand-tertiary;
+    border-color: darken($brand-tertiary, 5%);
+}
+
+.btn-tertiary:hover {
+    color: #fff;
+    background-color: lighten($brand-tertiary, 3%);
+}
+
+.label-secondary {
+    background-color: $brand-secondary;
+}
+
+.label-tertiary {
+    background-color: $brand-tertiary;
+}
+
+.form-control:focus {
+    border-color: $brand-info;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $brand-info;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $brand-info;
+}
+
+.shadow {
+    box-shadow : 0 1px 10px gray;
+}
+
+.no-outline, .no-outline:focus {
+    outline : none !important;
+}
+
+.checkbox-container .checkbox_label {
+    padding-right : 1rem !important;
+}
+
+.jp-card .jp-card-front .jp-card-lower .jp-card-expiry:after, .jp-card .jp-card-front .jp-card-lower .jp-card-expiry:before {
+    opacity      : 1 !important;
+    font-weight  : 200 !important;
+    font-size    : 15px !important;
+    margin-right : 12px !important;
+}
+
+.jp-card .jp-card-front .jp-card-lower .jp-card-name {
+    width : 155px !important;
+}
+
+.jp-card .jp-card-back, .jp-card .jp-card-front {
+    background : #474444 !important;
+}
+
+/***********  Vue transitions  **********/
+.fade-enter-active, .fade-leave-active {
+    transition : opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+    opacity : 0;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+    transition : all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition : all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */
+{
+    transform : translateX(10px);
+    opacity   : 0;
+}
+
+.bounce-enter-active {
+    animation : bounce-in .5s;
+}
+
+.bounce-leave-active {
+    animation : bounce-in .5s reverse;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform : scale(0);
+    }
+    50% {
+        transform : scale(1.3);
+    }
+    100% {
+        transform : scale(1);
+    }
+}
+
+a.cart, a.cart:visited, a.cart:active, a.cart:hover, a.cart:focus,
+a.daily-deal, a.daily-deal:visited, a.daily-deal:active, a.daily-deal:hover, a.daily-deal:focus {
+    color           : $text-color;
+    text-decoration : none;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition : all 0.5s ease;
+    overflow   : hidden;
+    visibility : visible;
+    opacity    : 1;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+    opacity    : 0;
+    visibility : hidden
+}
+
+.sweet-modal-overlay {
+    background : rgba(30, 30, 30, 0.9) !important;
+}
+
+.social a {
+    color      : $text-color;
+    font-size  : 30px;
+    margin     : 10px;
+    transition : color 0.3s;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited {
+        text-decoration : none;
+        color           : $text-color;
+    }
+    &:hover {
+        color : darken($text-color, 20);
+
+    }
+}
+
+.sweet-modal .sweet-title > h2 {
+    line-height : 64px;
+}
+
+.tippy-backdrop {
+    top    : 0;
+    bottom : 0;
+}
+
+.tippy-tooltip.categories-theme {
+    background-color : #bf1e2e;
+    border-radius    : 0;
+    padding          : 0;
+}
+
+#daily-deal-countdown {
+    .countdown {
+        justify-content : right;
+
+    }
+    .block {
+        margin   : 0 6px;
+        position : relative;
+        p.text {
+            display : none;
+        }
+        p.digit::after {
+            content  : " : ";
+            position : absolute;
+            left     : -9px;
+            top      : -1px;
+        }
+    }
+    .block:nth-last-child(1) p.digit::after {
+        content : none;
+    }
+    .block:first-child {
+        margin : 0 0 0 6px;
+    }
+}
+
+.map-div {
+    margin-bottom : -5px;
+}
+
+img.free-shipping {
+    height     : 32px;
+    margin-top : 5px;
+}
+
+.text-lined {
+    margin-left     : 5px;
+    text-decoration : line-through;
+}
+
+// #fake {
+//     background-image : url("../../imgs/logo.png");
+//     background-image : url("../../imgs/white-logo.png");
+//     background-image : url("../../imgs/white-bg-logo.png");
+// }
+
+.flex {
+    display : flex;
+    &.flex-wrap {
+        flex-wrap : wrap
+    }
+}
+
+.flex > div {
+    align-self : center;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition : all 0.5s ease;
+    overflow   : hidden;
+    visibility : visible;
+    opacity    : 1;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+    opacity    : 0;
+    visibility : hidden
+}
+
+.box {
+    background    : #fff;
+    // box-shadow    : 0 0 6px -2px $text-color;
+    overflow      : auto;
+    padding       : 10px;
+    // border-radius : 4px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content : " ";
+    display : table;
+}
+
+.clearfix:after {
+    clear : both;
+}
+
+.sweet-modal-overlay {
+    background : rgba(30, 30, 30, 0.9) !important;
+}
+
+.card {
+    margin        : 25px auto;
+    padding       : 30px 10px;
+    box-shadow    : 1px 1px 8px -3px grey;
+    border-radius : 5px;
+    display       : flex;
+    align-items   : center;
+    img {
+        width : 100%;
+    }
+}
+
+.sections {
+    .container {
+        margin-top    : -35px;
+        background    : #fff;
+        box-shadow    : 1px 1px 8px -3px grey;
+        border-radius : 5px;
+    }
+    .active {
+        color : #bf1e2e !important;
+    }
+    a {
+        line-height : 45px !important;
+        font-size   : 22px;
+    }
+}
+
+.tippy-tooltip {
+    padding : 10px !important;
+}
+
+.panel {
+    box-shadow : none;
+    .panel-body {
+        padding : 0;
+    }
+}
+
+@media #{$mobile} {
+    img.free-shipping {
+        margin : 9px 8px 0 0 !important;
+    }
+    .layout-header {
+        flex-direction : column;
+        min-height     : 300px;
+        .logo {
+            justify-self    : start;
+            flex            : 2;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+        }
+        .links {
+            justify-self    : end;
+            flex            : 1;
+            margin-bottom   : 20px;
+            flex-direction  : column;
+            height          : 65px;
+            justify-content : space-between;
+            a {
+                flex : initial;
+            }
+        }
+    }
+    .logo {
+        justify-self : start;
+        flex         : 1;
+    }
+    .cart {
+        justify-self : end;
+        flex         : 0;
+        position     : relative;
+
+        .filled:after {
+            content    : '';
+            position   : absolute;
+            width      : 3px;
+            height     : 3px;
+            background : red;
+            right      : 5px;
+            top        : 0;
+        }
+
+    }
+    .border-left {
+        border-left : 0 solid;
+    }
+
+    .border-right {
+        border-right : 0 solid #999;
+    }
+
+    .margin-bottom-xs {
+        margin-bottom : 15px !important;
+    }
+}
+
+.owl-theme .owl-nav [class*='owl-'] {
+    outline : none;
+}
+
+#cart {
+    max-width : 300px;
+}
+
+.table-products td {
+    vertical-align: middle !important;
+}
+
+// fix vue-stars inactive place
+.vue-stars input:checked ~ label .inactive, .vue-stars.notouch:not(.readonly):hover label .active, .vue-stars.notouch:not(.readonly) label:hover ~ label .inactive {
+    margin-right: -25px !important;
+}
+
+.xs-no-padding {
+    padding: 0;
+}
+
+
+.vdatetime-popup {
+    font-family: Light !important;
+}
+
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] .mysr-form-button {
+    background-color: $brand-primary !important;
+    font-family : Light !important;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+  font-size: 16px !important;
+}

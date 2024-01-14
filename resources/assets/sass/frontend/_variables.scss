@@ -1,0 +1,71 @@
+//Custom Fonts
+@font-face {
+    font-family : 'Light';
+    src         : url('~/../../fonts/NeoSansArabic.ttf') format('truetype')
+}
+
+@font-face {
+    font-family : 'Bold';
+    src         : url('~/../../fonts/HelveticaNeueLTArabicBold.ttf') format('truetype')
+}
+
+// Body
+$body-bg : #fff;
+
+// Borders
+$laravel-border-color : darken($body-bg, 10%);
+$list-group-border : $laravel-border-color;
+$navbar-default-border : $laravel-border-color;
+$panel-default-border : $laravel-border-color;
+$panel-inner-border : $laravel-border-color;
+
+// Brands
+$brand-primary : #9a0120;
+$brand-secondary : #f2f4f2;
+$brand-tertiary : #9a0120;
+$brand-info : #a7a9ac;
+$brand-success : #0ba012;
+$brand-warning : #F5C511;
+$brand-danger : #c32c3b;
+$brand-dark : #333333;
+$brand-light : #f4f6f8;
+
+// Typography
+$icon-font-path : "~bootstrap-sass/assets/fonts/bootstrap/";
+$font-family-sans-serif : "Raleway", sans-serif;
+$font-size-base : 14px;
+$line-height-base : 1.6;
+$text-color : #444345;
+$title-color : #0294e9;
+$text-color-light : #808080;
+$text-color-white : #fff;
+
+$colors : (
+        primary: #f5f8fb,
+        secondary: #0294e9,
+        danger: #c32c3b,
+        light: #808080,
+        warning: #F5C511,
+        info: #0294e9,
+        white: #fff,
+        pink: #ed217c,
+        mauve: #92278f,
+);
+
+// Navbar
+$navbar-default-bg : #fff;
+
+// Buttons
+$btn-default-color : $text-color;
+
+// Inputs
+$input-border : lighten($text-color, 40%);
+$input-border-focus : lighten($brand-primary, 25%);
+$input-color-placeholder : lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg : #fff;
+
+$mobile : "(max-width: 767px)";
+$tablet : "(min-width: 768px) and (max-width: 1023px)";
+$desktop : "(min-width: 1024px)";

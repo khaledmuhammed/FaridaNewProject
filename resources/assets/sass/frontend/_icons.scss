@@ -1,0 +1,93 @@
+/*
+Flaticon icon font: Flaticon
+Creation date: 06/11/2018 15:17
+*/
+
+@font-face {
+    font-family : "Flaticon";
+    src         : url("./../../fonts/icons/Flaticon.eot");
+    src         : url("./../../fonts/icons/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("./../../fonts/icons/Flaticon.woff") format("woff"),
+    url("./../../fonts/icons/Flaticon.ttf") format("truetype"),
+    url("./../../fonts/icons/Flaticon.svg#Flaticon") format("svg");
+    font-weight : normal;
+    font-style  : normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio : 0) {
+    @font-face {
+        font-family : "Flaticon";
+        src         : url("./../../fonts/icons/Flaticon.svg#Flaticon") format("svg");
+    }
+}
+
+.fi:before {
+    display                 : inline-block;
+    font-family             : "Flaticon";
+    font-style              : normal;
+    font-weight             : normal;
+    font-variant            : normal;
+    line-height             : 1;
+    text-decoration         : inherit;
+    text-rendering          : optimizeLegibility;
+    text-transform          : none;
+    -moz-osx-font-smoothing : grayscale;
+    -webkit-font-smoothing  : antialiased;
+    font-smoothing          : antialiased;
+}
+
+.flaticon-bag:before {
+    content : "\f100";
+    color   : inherit
+}
+
+.flaticon-heart:before {
+    content : "\f101";
+    color   : inherit
+}
+
+.flaticon-user:before {
+    content : "\f102";
+    color   : inherit
+}
+
+.flaticon-search:before {
+    content : "\f103";
+    color   : inherit
+}
+
+.flaticon-whatsapp:before {
+    content : "\f104";
+    color   : inherit
+}
+
+.flaticon-envelope:before {
+    content : "\f105";
+}
+
+.flaticon-instagram:before {
+    content : "\f106";
+}
+
+.flaticon-twitter:before {
+    content : "\f107";
+}
+
+.flaticon-cancel:before {
+    content : "\f108";
+}
+
+.flaticon-play-arrow:before {
+    content : "\f109";
+}
+
+$font-Flaticon-bag : "\f100";
+$font-Flaticon-heart : "\f101";
+$font-Flaticon-user : "\f102";
+$font-Flaticon-search : "\f103";
+$font-Flaticon-whatsapp : "\f104";
+$font-Flaticon-envelope : "\f105";
+$font-Flaticon-instagram : "\f106";
+$font-Flaticon-twitter : "\f107";
+$font-Flaticon-cancel : "\f108";
+$font-Flaticon-play-arrow : "\f109";

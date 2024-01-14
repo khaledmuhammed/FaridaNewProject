@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'tiptap-icons';
+  src:  url('../../fonts/tiptap-icons.eot?u7c2c8');
+  src:  url('../../fonts/tiptap-icons.eot?u7c2c8#iefix') format('embedded-opentype'),
+    url('../../fonts/tiptap-icons.ttf?u7c2c8') format('truetype'),
+    url('../../fonts/tiptap-icons.woff?u7c2c8') format('woff'),
+    url('../../fonts/tiptap-icons.svg?u7c2c8#tiptap-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="tiptap-icon-"], [class*=" tiptap-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'tiptap-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tiptap-icon-code:before {
+  content: "\e900";
+}
+.tiptap-icon-add_col_after:before {
+  content: "\e901";
+}
+.tiptap-icon-add_col_before:before {
+  content: "\e902";
+}
+.tiptap-icon-add_row_after:before {
+  content: "\e903";
+}
+.tiptap-icon-add_row_before:before {
+  content: "\e904";
+}
+.tiptap-icon-bold:before {
+  content: "\e905";
+}
+.tiptap-icon-checklist:before {
+  content: "\e906";
+}
+.tiptap-icon-combine_cells:before {
+  content: "\e907";
+}
+.tiptap-icon-delete_col:before {
+  content: "\e908";
+}
+.tiptap-icon-delete_row:before {
+  content: "\e909";
+}
+.tiptap-icon-delete_table:before {
+  content: "\e90a";
+}
+.tiptap-icon-github:before {
+  content: "\e90b";
+}
+.tiptap-icon-hr:before {
+  content: "\e90c";
+}
+.tiptap-icon-image:before {
+  content: "\e90d";
+}
+.tiptap-icon-italic:before {
+  content: "\e90e";
+}
+.tiptap-icon-link:before {
+  content: "\e90f";
+}
+.tiptap-icon-mention:before {
+  content: "\e910";
+}
+.tiptap-icon-ol:before {
+  content: "\e911";
+}
+.tiptap-icon-paragraph:before {
+  content: "\e912";
+}
+.tiptap-icon-quote:before {
+  content: "\e913";
+}
+.tiptap-icon-redo:before {
+  content: "\e914";
+}
+.tiptap-icon-remove:before {
+  content: "\e915";
+}
+.tiptap-icon-strike:before {
+  content: "\e916";
+}
+.tiptap-icon-table:before {
+  content: "\e917";
+}
+.tiptap-icon-ul:before {
+  content: "\e918";
+}
+.tiptap-icon-underline:before {
+  content: "\e919";
+}
+.tiptap-icon-undo:before {
+  content: "\e91a";
+}
+
+.ProseMirror {
+  height: 250px;
+  overflow: scroll;
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  border-radius: 0;
+  border-color: #d2d6de;
+  -webkit-appearance: none;
+}

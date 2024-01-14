@@ -1,0 +1,91 @@
+#checkout {
+    margin-top : 15px;
+    .step-header {
+        font-size     : 20px;
+        font-family   : Bold;
+        margin-bottom : 30px;
+        .step-num {
+            border        : 2px solid $brand-dark;
+            margin-left   : 20px;
+            border-radius : 50%;
+            color         : $brand-dark;
+            width         : 40px;
+            height        : 40px;
+            text-align    : center;
+            display       : inline-block;
+        }
+        .step-title {
+        }
+        &.step-success {
+            .step-num {
+                border-color : $brand-tertiary;
+                color        : $brand-primary;
+
+            }
+        }
+    }
+    select.form-control {
+        padding-top : 0 !important;
+    }
+}
+.vdatetime-calendar__month__day--selected > span > span,
+  .vdatetime-calendar__month__day--selected:hover > span > span {
+    color: #fff;
+    background: #9a0120 !important;
+}
+.vdatetime-time-picker__item--selected {
+    color: #9a0120 !important;;
+    font-size: 20px !important;
+  }
+  .vdatetime-month-picker__item--selected {
+    color: #9a0120 !important;
+    font-size: 20px;
+  }
+  .vdatetime-popup__header {
+    padding: 18px 30px;
+    background:#9a0120 !important;
+    color: #fff;
+    font-size: 32px;
+  }
+  .vdatetime-calendar__month__weekday{
+      font-size: 13px !important;
+  }
+  .vdatetime-popup__actions__button {
+    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    background: transparent;
+    font-size: 16px;
+    color:#9a0120 !important;
+    cursor: pointer;
+    transition: color .3s
+  }
+  .vdatetime-calendar__month__weekday,
+.vdatetime-calendar__month__day {
+  display: inline-block;
+  width: 14.28571%;
+  line-height: 36px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  cursor: pointer
+}
+
+.vdatetime-input{
+    display: block;
+      width: 100%;
+      height: 36px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #aaa9ab;
+      border-radius: 4px;
+      -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  }

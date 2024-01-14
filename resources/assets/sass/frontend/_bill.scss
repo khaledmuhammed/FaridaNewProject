@@ -1,0 +1,206 @@
+#checkout {
+
+    .bill {
+        overflow-x : auto;
+    }
+    .table {
+        display       : table;
+        table-layout  : fixed;
+        border        : 1px solid gray;
+        border-left   : 0;
+        margin-bottom : 0;
+
+        .table-header {
+            display     : table-header-group;
+            font-weight : bold;
+            .table-title {
+                display        : table-cell;
+                border-left    : 1px solid gray;
+                border-bottom  : 1px solid gray;
+                padding        : 5px;
+                vertical-align : middle;
+                text-align     : center;
+            }
+            .product-name {
+                min-width : 300px;
+            }
+        }
+        .table-footer {
+            display     : table-footer-group;
+            font-weight : bold;
+        }
+        .table-row.table-footer .table-cell {
+            border-top : 1px solid black;
+        }
+
+        .table-row {
+            display : table-row;
+
+            .table-cell {
+                border-left : 1px solid gray;
+                //border-top    : 1px solid gray;
+                display     : table-cell;
+                line-height : 2.5;
+                padding     : 5px 5px 10px;
+                min-width   : 100px;
+
+            }
+        }
+    }
+    .bill-header {
+        display         : flex;
+        flex-direction  : row;
+        justify-content : space-between;
+        align-items     : center;
+        .bill-logo {
+            height     : 110px;
+            visibility : visible;
+            display    : inline-block !important;
+            margin     : 20px auto;
+            //position   : absolute;
+            //left       : 0;
+            //right      : 0;
+        }
+
+        .arabic, .english {
+            display     : inline-block;
+            line-height : 10px;
+            font-size   : 12px;
+        }
+        .english {
+            text-align : left;
+        }
+    }
+    .product-image {
+        height  : 80px;
+        padding : 10px;
+    }
+    dt {
+        text-align : left;
+        width      : 20%;
+    }
+    dt, dd {
+        display     : inline-block;
+        margin-left : 20px;
+        line-height : 1.9;
+    }
+    .bill-title {
+        border-top       : 5px solid gray;
+        background-color : #e6e5e5;
+        padding-bottom   : 8px;
+        text-align       : center;
+        font-weight      : bold;
+        font-size        : 18px;
+        word-spacing     : 5px;
+        margin           : 3px 0;
+    }
+
+    .bill-details {
+        border          : 1px solid;
+        padding         : 5px;
+        display         : flex;
+        justify-content : space-between;
+
+        p {
+            margin : auto 10px;
+            span:first-child {
+                font-weight : bold
+            }
+        }
+    }
+
+    .grid-container {
+        display             : grid;
+        justify-content     : stretch;
+        grid-template-areas : "a d e" "b d e" "c d e";
+        & > div {
+            padding         : 5px;
+            display         : flex;
+            align-content   : center;
+            flex-direction  : column;
+            justify-content : center;
+            border-bottom   : 1px solid grey;
+            border-right    : 1px solid grey;
+        }
+        .item1 {
+            grid-area : a;
+        }
+        .item2 {
+            grid-area : b;
+        }
+        .item3 {
+            grid-area : c;
+        }
+        .item4 {
+            grid-area : d;
+        }
+        .item5 {
+            grid-area   : e;
+            border-left : 1px solid grey;
+
+        }
+        .item4, .item5 {
+            line-height : 30px;
+        }
+    }
+    .printable {
+        border     : 1px solid;
+        padding    : 15px;
+        margin-top : 20px;
+        min-width  : 700px;
+
+    }
+}
+
+@media #{$mobile} {
+    .download-pdf {
+        margin-top: 10px;
+    }
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust : exact;
+    }
+    body * {
+        visibility : hidden;
+    }
+    footer {
+        display : none;
+    }
+    .printable, .printable * {
+        visibility : visible;
+    }
+    .printable {
+        .bill-header {
+            display         : flex;
+            flex-direction  : row;
+            justify-content : space-between;
+            align-items     : center;
+            .bill-logo {
+                height     : 110px;
+                visibility : visible;
+                display    : inline-block !important;
+                margin     : 20px auto;
+                //position   : absolute;
+                //left       : 0;
+                //right      : 0;
+            }
+        }
+        .arabic, .english {
+            display : inline-block;
+        }
+        .english {
+            text-align : left;
+        }
+    }
+    .printable {
+        position : absolute;
+        left     : 2.5%;
+        top      : 0px;
+        right    : 2.5%;
+        //border   : 1px solid;
+        //padding  : 10px;
+    }
+
+}

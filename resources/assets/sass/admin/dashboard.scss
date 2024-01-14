@@ -1,0 +1,190 @@
+@import "../../../../node_modules/vue-multiselect/dist/vue-multiselect.min.css";
+@import "../plugins/tiptap-icons.css";
+
+@font-face {
+    font-family : 'Light';
+    src         : url('~/../../fonts/NeoSansArabic.ttf') format('truetype')
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family : Light;
+}
+
+.skin-blue {
+    .wrapper,
+    .main-sidebar,
+    .left-side {
+        background-color : #444345;
+    }
+    .sidebar a {
+        color : #ffffff;
+    }
+
+    .main-header .logo, .main-header .logo:hover {
+        background : #444345;
+    }
+    .main-header .navbar {
+        //border-bottom : 1px solid #71020c;
+    }
+    .main-header .navbar {
+        background-color : #ffffff;
+    }
+    .sidebar-menu > li.header {
+        color      : #d9daea;
+        background : #444345;
+    }
+    .main-header .navbar .sidebar-toggle, .main-header .navbar .nav > li > a {
+        color : #444345;
+    }
+
+    .sidebar-menu > li:hover > a, .sidebar-menu > li.active > a, .sidebar-menu > li.menu-open > a {
+        color      : #444345;
+        background : #ffffff;
+    }
+    .sidebar-menu > li.active > a {
+        border-left-color  : #2b0909;
+        border-right-color : #061823;
+    }
+    .main-header .navbar .sidebar-toggle:hover {
+        background-color : #878a90;
+    }
+    .main-header .navbar .nav > li > a:hover, .main-header .navbar .nav > li > a:active, .main-header .navbar .nav > li > a:focus, .main-header .navbar .nav .open > a, .main-header .navbar .nav .open > a:hover, .main-header .navbar .nav .open > a:focus, .main-header .navbar .nav > .active > a {
+        background : rgba(0, 0, 0, 0.38);
+    }
+    .sidebar-menu > li > .treeview-menu {
+        margin     : 0;
+        background : rgba(0, 0, 0, 0.38);
+    }
+    .sidebar-menu > li > a, .sidebar-menu .treeview-menu > li > a {
+        padding : 12px 14px 12px 15px;
+        display : block;
+    }
+    .sidebar-menu .treeview-menu > li > a {
+        color : #ffffff;
+    }
+    .sidebar-menu .treeview-menu > li.active > a, .sidebar-menu .treeview-menu > li > a:hover {
+        color      : #444345;
+        background : #ffffff;
+    }
+}
+
+.sidebar {
+    padding-bottom : 0;
+}
+
+.box.box-info {
+    border-top-color : #0294e9;
+}
+
+.btn-info {
+    background-color : #0294e9;
+    border-color     : #0294e9
+}
+
+.btn-info:hover, .btn-info:active, .btn-info.hover {
+    background-color : #0294e9
+}
+
+.btn-info.focus, .btn-info:focus {
+    color            : #000;
+    background-color : #0294e9 !important;
+    border-color     : #0294e9 !important;
+}
+
+.not-readonly {
+    background-color : #fff !important;
+}
+
+.control-sidebar-dark, .control-sidebar-dark + .control-sidebar-bg {
+    background : #222d32;
+}
+
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+    padding : 0;
+}
+
+.custom-multiselect {
+    .multiselect__option {
+        display         : flex !important;
+        justify-content : start;
+        align-items     : center;
+        padding         : 0;
+        img {
+            width  : 50px;
+            margin : 10px;
+        }
+    }
+    .option__desc {
+        display : inline-block;
+        margin  : 0 10px;
+    }
+    span.option__title {
+        display       : block;
+        margin-bottom : 6px;
+    }
+    span.option__small {
+        font-size : 13px;
+    }
+}
+
+.pull-end {
+    float : right;
+}
+
+.multiselect__spinner:before, .multiselect__spinner:after {
+    left         : 39%;
+    margin       : -8px 0 0 -8px;
+    width        : 25px;
+    height       : 25px;
+    border-color : #BF1E2E transparent transparent !important;
+}
+
+img.content-bg {
+    position : fixed;
+    bottom   : -15%;
+    right    : -20%;
+    width    : 60%;
+    z-index  : 0;
+    filter   : grayscale(100%) brightness(2.5);
+    opacity  : 0.6;
+}
+
+.content-wrapper {
+    // background-image      : url('./../../imgs/bg-logo.png');
+    background-repeat     : no-repeat;
+    background-size       : 60%;
+    background-origin     : content-box;
+    background-position   : 160% 75%;
+    background-attachment : fixed;
+}
+
+@media (max-width : 767px) {
+    .content-wrapper {
+        background-size     : auto;
+        background-position : center;
+    }
+}
+
+.box, .info-box {
+    background : rgba(255, 255, 255, .75);
+}
+
+.multiselect__tags {
+    border-radius : 0px;
+    border-color  : #d2d6de;
+}
+
+section.content {
+    padding : 13px 15px 0;
+}
+.box-footer{
+    background-color: transparent;
+}
+
+.margin-bottom{
+    margin-bottom : 15px;
+}
+
+.input-group .form-control {
+    z-index: auto;
+}

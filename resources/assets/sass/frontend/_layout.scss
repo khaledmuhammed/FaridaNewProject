@@ -1,0 +1,241 @@
+#app {
+    .c-navbar {
+        border-top: 5px solid $brand-tertiary;
+        padding: 10px 0 20px 0;
+        .logo {
+            padding: 10px;
+            padding-top: 0 !important;
+            img {}
+        }
+        .search-component {
+            padding: 0 10px;
+            .form-control-feedback {
+                //top : 12px;
+            }
+        }
+        .hamburger {
+            font-size: 24px;
+        }
+        .links {
+            color: $brand-dark;
+            a {
+                color: $brand-dark;
+            }
+            .cart,
+            .wishlist {
+                h4,
+                .h4 {
+                    position: relative;
+                    display: inline-block;
+                }
+                .filled:after {
+                    content: '';
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    background: $brand-primary;
+                    right: 1px;
+                    top: 3px;
+                    border-radius: 50%;
+                }
+            }
+            .wishlist .filled:after {
+                right: -2px;
+            }
+        }
+    }
+    .categories-bar {
+        align-items: center;
+        background-color: $brand-secondary;
+        .navbar-nav {
+            float: none;
+        }
+        .nav {
+            justify-content: space-evenly;
+            padding: 0;
+            li {
+                margin: 10px;
+            }
+            &>li>a {
+                padding: 5px;
+                margin: 0;
+                font-size: 13px;
+                color: $brand-dark;
+                &:hover,
+                &:focus {
+                    background-color: transparent;
+                    margin-bottom: -2px;
+                    // border-bottom    : 2px solid $brand-warning;
+                }
+            }
+            .dropdown {
+                position: relative;
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #fff;
+                    min-width: 160px;
+                    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+                    z-index: 2;
+                    top: 30px;
+                    list-style: none;
+                    padding: 10px;
+                    li {
+                        padding: 5px;
+                        margin: 0;
+                        a {
+                            font-size: 13px;
+                            color: $brand-dark;
+                        }
+                    }
+                }
+                &:hover .dropdown-content {
+                    display: block;
+                }
+            }
+        }
+        .hamburger {
+            font-size: 30px;
+            position: absolute;
+        }
+    }
+    footer {
+        margin: 50px 0 0 0;
+        .bottom {
+            // background-color : $brand-light;
+            .rights {
+                padding-top: 15px;
+                color: $brand-dark;
+                font-size: 10px;
+            }
+            .logo {
+                padding-top: 10px;
+            }
+            .links {
+                line-height: 45px;
+                a {
+                    padding: 10px 0;
+                    font-size: 16px;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .mail-list {
+            margin: 80px 0;
+            padding: 30px;
+            background: $brand-warning;
+            .form-group {
+                margin-bottom: 0;
+            }
+        }
+        .about.flex {
+            width: 100%;
+            flex-direction: row;
+            background: $brand-secondary;
+            .brief {
+                padding: 20px;
+                flex: 4;
+                img {
+                    height: 50px;
+                    margin: 20px 0;
+                }
+            }
+            .support {
+                //margin           : 0 15px;
+                padding: 30px;
+                flex: 4;
+                text-align: center;
+                place-self: stretch;
+                display: flex;
+                justify-content: center;
+                a {
+                    text-decoration: none;
+                }
+            }
+            .quick-access {
+                padding: 30px;
+                flex: 4;
+                place-self: stretch;
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                a {
+                    color: $brand-dark;
+                }
+            }
+        }
+    }
+    .whatsapp-icon {
+        display: inline-block;
+    }
+    .whatsapp-mobile {
+        display: inline-block;
+        vertical-align: sub;
+        margin: 0 10px;
+        span {
+            font-size: 9px;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .bar .flex {
+        flex-direction: column;
+        justify-content: space-between;
+        &>div {
+            padding: 20px 0 !important;
+            align-self: stretch;
+            text-align: center;
+        }
+    }
+    .about.flex {
+        flex-direction: column !important;
+        justify-content: space-between;
+    }
+    .bm-burger-button {
+        cursor: pointer;
+        height: 25px;
+        left: 36px;
+        position: absolute;
+        top: 36px;
+        width: 30px;
+        .line-style {
+            height: 11% !important;
+            left: 0;
+            position: absolute;
+            right: 0;
+        }
+        .bm-burger-bars {
+            background-color: $brand-primary;
+        }
+    }
+    .cross-style {
+        right: 15px !important;
+        top: 15px !important;
+    }
+    .support {
+        text-align: right !important;
+    }
+}
+
+.whatsapp-floating-icon {
+    position: fixed !important;
+    right: 30px;
+    bottom: 50px;
+    background: #1cc525;
+    color: #fff !important;
+    font-size: 30px;
+    border-radius: 100%;
+    padding: 5px 12px 2px 12px;
+    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.35s;
+    z-index: 10;
+}
+
+.whatsapp-floating-icon:hover {
+    transform: scale(1.1);
+}

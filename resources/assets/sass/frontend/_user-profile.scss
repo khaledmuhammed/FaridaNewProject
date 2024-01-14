@@ -1,0 +1,26 @@
+#user-profile {
+    .box {
+        margin-top    : 15px;
+        margin-bottom : 15px;
+        padding       : 15px 10px 15px;
+        background    : #fff;
+    }
+    .box-inline-block-top {
+        vertical-align : top;
+        box-shadow     : 0 0px 7px -3px grey;
+    }
+    .box-side-content {
+        padding    : 6px 4% 20px;
+        min-height : 165px;
+    }
+    .box-header {
+        font-size     : 25px;
+        font-weight   : 300;
+        padding       : 13px 24px 16px 4%;
+        border-bottom : 1px solid #eee;
+    }
+    .box-content {
+        padding : 20px 4% 0;
+    }
+
+}

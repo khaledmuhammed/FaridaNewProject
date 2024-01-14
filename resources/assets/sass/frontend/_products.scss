@@ -1,0 +1,166 @@
+.product-header {
+    display : flex;
+
+    .product-name {
+        color       : #bf1e2e;
+        font-size   : 36px;
+        flex        : 98;
+        font-family : Bold;
+        direction   : ltr;
+        text-align  : right;
+    }
+    .left-side {
+        display        : flex;
+        flex           : 2;
+        flex-direction : column;
+
+        .product-availability {
+            font-size  : 12px;
+            padding    : 2px 16px 6px;
+            place-self : flex-end;
+            float      : left;
+        }
+        .vue-stars {
+            margin-top : 10px;
+            align-self : left;
+            font-size  : 18px;
+            direction  : rtl;
+        }
+    }
+    .labels {
+
+    }
+}
+
+.product-background {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 400px;
+}
+
+#labels {
+    .product-label {
+        float         : right;
+        padding       : 0 8px;
+        margin-left   : 3px;
+        margin-bottom : 10px;
+    }
+}
+
+.flex {
+    display : flex;
+}
+
+.flex > div {
+    align-self : center;
+}
+
+.collapse-header {
+    color          : $brand-dark;
+    border-bottom  : 2px solid $brand-dark;
+    font-size      : 18px;
+    font-family    : Bold;
+    margin         : 10px auto;
+    cursor         : pointer;
+    padding-bottom : 10px;
+    a {
+        margin-right : 30px;
+        color        : $brand-dark;
+
+        &.collapsed:before {
+            content : "+";
+        }
+        &:before {
+            content  : "-";
+            right    : 20px;
+            position : absolute;
+        }
+
+    }
+}
+
+.collapse-header span {
+    padding-right : 30px;
+}
+
+.description {
+    font-size   : unset;
+    font-family : unset;
+    border      : unset;
+    background  : unset;
+    white-space : pre-line;
+    word-break  : unset;
+}
+
+@media #{$mobile} {
+    .product-header {
+        flex-direction : column;
+        .left-side {
+            display        : flex;
+            flex           : 2;
+            flex-direction : column;
+
+            .product-availability {
+                padding    : 2px 16px 6px;
+                margin-top : 15px;
+                font-size  : 16px;
+                align-self : center;
+            }
+            .vue-stars {
+                align-self : center;
+            }
+
+        }
+    }
+
+}
+
+.breadcrumb {
+    background-color : white;
+    a, a:visited,
+    a:active,
+    a:hover {
+        color : $brand-primary;
+
+    }
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+    transition : all .2s ease;
+}
+
+.slide-fade-leave-active {
+    transition : all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */
+{
+    transform : translateY(-10px);
+    opacity   : 0;
+}
+
+button.owl-prev, button.owl-next {
+    position      : absolute !important;
+    top           : calc(50% - 20px) !important;
+    left          : 20px !important;
+    font-size     : 30px !important;
+    line-height   : 1 !important;
+    background    : rgba(195, 194, 197, 0.76) !important;
+    width         : 40px !important;
+    height        : 40px !important;
+    border-radius : 50% !important;
+    color         : #fff;
+
+    span {
+        margin-top : -4px;
+        display    : block;
+    }
+}
+
+button.owl-next {
+    left  : auto !important;
+    right : 20px !important;
+}
