@@ -5,16 +5,16 @@
             <span class="step-num ">1</span>
             <span class="step-title">بيانات العميل</span>
         </div>
-        <p class="text-center">لإكمال الطلب يرجى <a href="#" class="btn btn-primary btn-sm " @click="showLogin">تسجيل
+        <p class="">لإكمال الطلب يرجى <a class="btn btn-primary btn-sm " @click="showLogin">تسجيل
             الدخول</a>
         </p>
-        <p class="text-center">ولإكمال الطلب <b>كزائر</b> يمكنك تعبئة البيانات التالية:</p>
+        <p class="">ولإكمال الطلب <b>كزائر</b> يمكنك تعبئة البيانات التالية:</p>
         <div>
             <form class="form-horizontal">
                 <div :class="`form-group ${errors['guest_info.username ']? ' has-error' : '' }`">
-                    <label for="username" class="col-sm-3 control-label required">الاسم</label>
+                    <label for="username" class="col-md-2  required">الاسم</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-md-4">
                         <input id="username" type="text" class="form-control" name="username"
                                v-model="$store.state.checkout.guest_info.username" required autofocus>
 
@@ -24,9 +24,9 @@
                     </div>
                 </div>
                 <div :class="`form-group ${errors['guest_info.email']? ' has-error' : '' }`">
-                    <label for="email" class="col-sm-3 control-label">البريد الالكتروني</label>
+                    <label for="email" class="col-md-2 ">البريد الالكتروني</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-md-4">
                         <input id="email" type="email" class="form-control" name="email"
                                v-model="$store.state.checkout.guest_info.email" autofocus>
                                <span class="text-red">إذا كنت ترغب في متابعة طلبك ، برجاء إدخال البريد الالكتروني</span>
@@ -37,9 +37,9 @@
                     </div>
                 </div>
                 <div :class="`form-group ${errors['guest_info.mobile']? ' has-error' : '' }`">
-                    <label for="mobile" class="col-sm-3 control-label required">الجوال</label>
+                    <label for="mobile" class="col-md-2  required">الجوال</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-md-4">
                         <input id="mobile" type="tel" class="form-control" name="mobile"
                                v-model="$store.state.checkout.guest_info.mobile" required autofocus>
                         <span class="text-red">بالصيغة الدولية 9665xxxxxxxxx، بدون إضافة الصفر 00 في البداية</span>
@@ -49,9 +49,9 @@
                     </div>
                 </div>
                 <!-- <div :class="`form-group ${errors['guest_info.address_owner']? ' has-error' : '' }`">
-                    <label for="address_owner" class="col-sm-3 control-label required">اسم مستلم الشحنة</label>
+                    <label for="address_owner" class="col-md-2  required">اسم مستلم الشحنة</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-md-4">
                         <input id="address_owner" type="text" class="form-control" name="address_owner"
                                v-model="$store.state.checkout.guest_info.address_owner" required autofocus>
 
@@ -61,8 +61,8 @@
                     </div>
                 </div> -->
                 <div :class="`form-group ${errors['guest_info.country_id']? ' has-error' : '' }`">
-                    <label for="countries" class="col-sm-3 control-label required">الدولة</label>
-                    <div class="col-sm-9">
+                    <label for="countries" class="col-md-2  required">الدولة</label>
+                    <div class="col-md-4">
                         <select name="country_id" id="countries" class="form-control"
                                 v-model="$store.state.checkout.guest_info.country_id"
                                 required @input="$store.state.checkout.guest_info.city_id = null">
@@ -77,8 +77,8 @@
                 </div>
                 <div :class="`form-group ${errors['guest_info.city_id']? ' has-error' : '' }`"
                 >
-                    <label for="cities" class="col-sm-3 control-label required">المدينة</label>
-                    <div class="col-sm-9">
+                    <label for="cities" class="col-md-2  required">المدينة</label>
+                    <div class="col-md-4">
                         <select name="city_id" id="cities" class="form-control" required
                                 v-model="$store.state.checkout.guest_info.city_id"
                                 @change="updateShippingMethods">
@@ -94,8 +94,8 @@
                 </div>
                 <div v-if="districts.length" class="form-group"
                 >
-                    <label for="districts" class="col-sm-3 control-label required">الحي</label>
-                    <div class="col-sm-9">
+                    <label for="districts" class="col-md-2  required">الحي</label>
+                    <div class="col-md-4">
                         <select name="district_id" id="districts" class="form-control" required
                                 v-model="$store.state.checkout.guest_info.district_id" @change="districtSelected()">
                             <option selected disabled>اختر</option>
@@ -109,9 +109,9 @@
                     </div>
                 </div>
                 <div :class="`form-group ${errors['guest_info.address_details']? ' has-error' : '' }`">
-                    <label for="address_details" class="col-sm-3 control-label">العنوان</label>
+                    <label for="address_details" class="col-md-2 ">العنوان</label>
 
-                    <div class="col-sm-9">
+                    <div class="col-md-4">
                         <input id="address_details" type="text" class="form-control" name="address_details"
                                v-model="$store.state.checkout.guest_info.address_details" autofocus>
 
@@ -198,7 +198,7 @@
 <style lang="scss" scoped>
     /*@import "~styles/frontend/variables";*/
 
-    .control-label.required:after {
+    .required:after {
         content : '*';
         color   : red;
     }

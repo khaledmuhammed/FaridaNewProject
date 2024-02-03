@@ -34,8 +34,8 @@
       </div>
       <div style="margin: 20px 0 0 0;" class="col-sm-12 col-xs-12 no-padding">
         <div class="form-group">
-          <label for="date" class="col-sm-3">تاريخ التوصيل</label>
-          <div class="col-sm-9">
+          <label for="date" class="col-md-3">تاريخ التوصيل</label>
+          <div class="col-md-9">
             <datetime
               id="date"
               v-model="$store.state.checkout.shippingDate"
@@ -48,8 +48,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-3">وقت التوصيل</label>
-          <div class="col-sm-9">
+          <label class="col-md-3">وقت التوصيل</label>
+          <div class="col-md-9">
             <datetime
               type="time"
               v-model="$store.state.checkout.shippingTime"

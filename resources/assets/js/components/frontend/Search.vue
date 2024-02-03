@@ -1,10 +1,17 @@
 <template>
     <div class="has-feedback">
+        <modal>
+            <div slot="header">
+                <span class="btn pull-left btn-lg" @click="closeModal">                        <span
+                            class="glyphicon glyphicon-remove"></span>
+                    </span>
+            </div>
+            <div slot="body" class="form-horizontal">
         <div v-if="active" class="details col-xs-12">
             <transition-group name="list" tag="div">
                 <div v-for="item in result" class="row result" :key="'item'+item.id">
                     <div class="col-xs-12">
-                        <a :href="route+'/'+item.id" class="media">
+                        <a v-bind:href="'/'+route+'/'+item.id" class="media">
                             <div class="media-left">
                                 <img class="media-object" :src="item.thumbnail"
                                      onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEXp7vG6vsG3u77s8fTCxsnn7O/f5OfP09bFyczM0dO8wMPk6ezY3eDh5unJzdDR1tlr0sxZAAACVUlEQVR4nO3b23KDIBRA0QgmsaLx//+2KmPi/YJMPafZ6619sOzARJjq7QYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuJyN4+qMZcUri+BV3WQ22iIxSRTGFBITbRGpr218Ckx0EQPrxMfVPRP25QvNaT4xFTeJ1g/sJ4K8/aTuVxdNNJ99/Q0RQWlELtN7xGH9+8KYH1ZEX1hY770C9186Cm2R1TeONGj/paHQury7OwbsvzQUlp/9jakOJ2ooPLf/kl9on4Mtan50EhUUDvfgh8cqv/AxKlw+Cc3vPeUXjg+Kr4VCm+Vbl5LkeKHNTDKbKL9w3yr1B8q5RPmFu75puhPzTKKCwh13i2aJJguJ8gt33PG7GZxN1FC4tWvrB04TNRRu7Lw/S3Q2UUPh+ulpOIPTRB2FKyfgaeAoUUvhkvESnSYqL5ybwVGi7sKlwH6i6sL5JTpKVFZYlr0flmewTbyvX+piC8NyiXHvH9YD37OoqtA1v+wS15ZofxY1FTo/cJ+4NYNJd9BSVOi6kTeJOwLVFbrPyJ3dXqL6Cl1/7G7HDGordMOx7+hTVui2arQXBgVqKgwLVFQYGKinMDRQTWFwoJrC8AfcKLwUhRRSeL3vKkyDVaNLSdIf1snXEBQUyrlUTBQeIbPQD6uK8Zx3+yyHKbf/5N+y/gn78K/Rj/ZmY64Omhg9gHFaJu59i+EDGKf1/tshRxlxEoW+2uXS868EeflDYmDNltUzgkpqXyPGzULyK6QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8DV+AUrRI7QWHsWNAAAAAElFTkSuQmCC';">
@@ -22,8 +29,12 @@
                 </div>
             </transition-group>
         </div>
+        <i class="form-control-feedback fi flaticon-search text-primary" ></i>
         <input v-model="query" class="form-control search-input " name="search" type="text" :placeholder="$t('Search')" autocomplete="off">
-        <i class="form-control-feedback fi flaticon-search text-primary"></i>
+        
+    </div>
+    <div class="text-left" slot="footer"></div>
+    </modal>
     </div>
 </template>
 
@@ -59,6 +70,11 @@
                     });
                 })
             }
+        },
+        methods:{
+            closeModal() {
+                this.$root.showSearch = false
+            }
         }
     }
 </script>
@@ -66,23 +82,31 @@
 <style lang="scss" scoped>
     @import '~styles/frontend/variables';
 
+
+    
+
     a:hover {
         text-decoration : none;
     }
 
     .form-control {
-        font-size : 12px;
-        border-radius: 0;
+        font-size : 18px;
+        padding: 25px;
+        border-radius: 50%;
+        border:2px solid #000;
     }
 
     .search-input {
-        
+        padding-right: 50px;
     }
     .search-input::placeholder {
         
     }
     .form-control-feedback {
-        
+        position: relative;
+        top: 45px !important;
+        right: 5px;
+        z-index: 3;
     }
 
     div {
@@ -97,27 +121,30 @@
 
     .details {
         position           : absolute;
-        width              : calc(100% + 10px);
+        width              : 76%;
         background-color   : #ffffff;
         -webkit-box-shadow : 1px 1px 10px rgba(0, 0, 0, 0.1);
         box-shadow         : 0 0 6px rgba(0, 0, 0, 0.33);
         margin             : 0;
-        border-radius      : 5px;
-        top                : 40px;
+        border-radius      : 15px;
+        top                : 130px;
     }
 
     .result {
-        height      : 80px;
+        height      : 120px;
         display     : flex;
         align-items : center;
     }
 
     .media {
         margin-bottom : 5px;
+        display: flex;
+        align-items: center;
         img {
             background-color : #eee;
-            height           : 50px;
-            width            : 50px;
+            height           : 75px;
+            width            : 75px;
+            object-fit: cover;
             border-radius    : 5px;
         }
     }

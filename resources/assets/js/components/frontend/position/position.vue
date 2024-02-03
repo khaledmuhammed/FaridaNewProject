@@ -4,7 +4,7 @@
 
             <banner v-if="positionable.positionable_type.includes('Banner')" :positionable="positionable"></banner>
 
-            <div class="container"
+            <div 
                  v-if="positionable.positionable_type.includes('FeaturedProduct')">
                 <featured-products :checkout_route="checkout_route" :positionable="positionable" :size="size"></featured-products>
             </div>

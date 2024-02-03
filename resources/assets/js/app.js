@@ -138,6 +138,7 @@ const app = new Vue({
             e            : {},
             showRegister : false,
             showLogin    : false,
+            showSearch   : false,
             lang         : languages,
         }
     },

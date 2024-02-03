@@ -30,7 +30,7 @@
                         </a>
                     </template>
                 </li>
-                <li><a href="/packages"><span>الإشتراكات</span></a></li>
+                <li><a href="/packages"><span>{{$t('Subscriptions')}}</span></a></li>
                 <!-- <li><a href="/contact-us"><span>{{$t('Contact Us')}}</span></a></li> -->
                 <!-- <li><a href="/offers"><span>العروض</span></a></li>
                 <li><a href="/"><span>تجدوننا هنا</span></a></li> -->
@@ -67,7 +67,7 @@
         position     : fixed;
         z-index      : 1000;
         width        : max-content;
-        min-width    : 150px;
+        min-width    : 200px;
         background   : #fff;
         right        : -100%;
         color        : $brand-primary;
@@ -75,6 +75,7 @@
         overflow-y   : auto;
         padding-top  : 20px;
         padding-left : 20px;
+        padding-right : 20px;
         transition   : all 0.4s ease;
 
         &.active {

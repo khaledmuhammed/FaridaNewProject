@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="v-modal-mask">
-            <div class="v-modal-wrapper">
+            <div class="v-modal-wrapper"   >
                 <div class="v-modal-container">
 
                     <div class="v-modal-header">
@@ -41,4 +41,6 @@
         overflow-y : auto
         .v-modal-header h3
             color : #444345
+        @media (max-width: 767px)
+            padding: 10px
 </style>

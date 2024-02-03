@@ -1,7 +1,7 @@
 <template>
         <div class="featured-products">
-            <div class="title text-primary">
-                <span>{{featuredProducts.theTitle}}</span>
+            <div class="title">
+                {{featuredProducts.theTitle}}
             </div>
             <products-carousel v-if="products.length" :items="products" :auth="auth" :size="size"></products-carousel>
         </div>
@@ -23,6 +23,7 @@
             axios.get('/positionables/featured-products/' + this.positionable.positionable_id).then(res => {
                 this.featuredProducts = res.data.featured_products
                 this.products         = res.data.products
+                console.log(res.data.products)
             })
         },
         methods   : {
@@ -33,22 +34,19 @@
     /*@import "~styles/frontend/variables"*/
 
     .featured-products
-        margin-top : 100px
+        margin-left : 150px
+        margin-right : 150px
+        margin-top : 50px
+        margin-bottom : 50px
+        @media (max-width: 767px)
+            margin-left : 25px
+            margin-right : 25px
+            margin-bottom : 50px
 
-        .title
-            font-size : 20px
-            margin : -70px 0 0 0
-            font-family : Bold
-            position : relative
-            height: 80px
-            background-repeat: no-repeat;
-            text-align: center;
+    .title
+        margin-bottom: 20px
+        font-weight: 900
+        font-size: 24px                
 
-            span
-                background : white
-                padding : 0 20px
-                position : absolute
-                margin : auto
-                right : 0
-                left : 0
+        
 </style>

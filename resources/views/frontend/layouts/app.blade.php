@@ -14,7 +14,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta name="theme-color" content="#9a0120">
     <link rel="icon" sizes="192x192" href="{{asset('imgs/logo-icon.png')}}">
     @if(app()->getLocale() == 'en')
@@ -39,73 +39,60 @@
     </script>
 </head>
 <body>
-<div id="app">
-    <div class="visible-xs">
-        <sidebar ref="sidebar" :categories="{{$superCategories}}"></sidebar>
-    </div>
-    <transition name="slide-fade">
-        <sticky-bar v-if="displayBar" :super-categories="{{$superCategories}}"></sticky-bar>
-    </transition>
-    <div class="c-navbar">
-        <div class="container bar">
-            <div class="visible-xs">
-                <div class="hamburger" @click="$refs.sidebar.showSideMenu = true">&#9776;</div>
-            </div>
-
-            <div class="flex ">
-                <div class="logo col-sm-4 text-center">
-                    <a href="/"><img src="{{asset('imgs/logo.png')}}" alt=""></a>
-                </div>
-                <div class="search-component col-sm-4">
-                    <search route="{{route('product',"")}}"></search>
-                </div>
-                <div class="links col-sm-3 col-sm-offset-1">
-                    <div class="col-xs-3 col-xs-3 lang"><a href="{{route('lang')}}">@lang('عربي')</a></div>
-                    <div class="col-sm-3 col-xs-3">
-                        <ul class="nav">
-                            <li class=" dropdown">
-                                <span class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                      aria-haspopup="true" aria-expanded="false">
-                                    <h4 class="no-margin fi flaticon-user"></h4>
-                                </span>@auth
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="{{ route('profile') }}">
-                                                @lang('My Account')
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                                @lang('Logout')
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                  style="display: none;">
-                                                {{ csrf_field() }}
-                                            </form>
-                                        </li>
-                                    </ul>
-                                @else
-                                    <ul class="dropdown-menu">
-                                        <li @click="showLogin = true">
-                                            <a>@lang('Login')</a>
-                                        </li>
-                                        <li @click="showRegister = true">
-                                            <a>@lang('Register')</a>
-                                        </li>
-                                    </ul>
-                                @endauth
-                            </li>
-                        </ul>
-                    </div>
-                    {{-- <div class="col-xs-3 col-xs-3">
-                        <a target="_blank" href="https://wa.me/966558992470"
-                           class="no-margin h4 fi flaticon-whatsapp"></a>
-                    </div> --}}
-                    <div class="col-sm-3 col-xs-3">
+    <div id="app">
+        <div class="visible-xs">
+            <sidebar ref="sidebar" :categories="{{$superCategories}}"></sidebar>
+        </div>
+        <div class="visible-xs sidebar-btn">
+            <div class="hamburger" @click="$refs.sidebar.showSideMenu = true">&#9776;</div>
+        </div>
+        <header>
+            <nav>
+                <ul>
+                        <transition name="v-modal">
+                            <Search v-if="showSearch" route="products"></Search>
+                        </transition>
+                    
+                    <li>
+                        <h4 class="no-margin fi flaticon-search" @click="showSearch = true" style="color:black"></h4>
+                    </li>
+                    <li class=" dropdown">
+                        <span class="dropdown-toggle" data-toggle="dropdown" role="button"
+                              aria-haspopup="true" aria-expanded="false">
+                            <h4 class="no-margin fi flaticon-user" style="color:black"></h4>
+                        </span>@auth
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('profile') }}">
+                                        @lang('My Account')
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        @lang('Logout')
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        @else
+                            <ul class="dropdown-menu">
+                                <li @click="showLogin = true">
+                                    <a>@lang('Login')</a>
+                                </li>
+                                <li @click="showRegister = true">
+                                    <a>@lang('Register')</a>
+                                </li>
+                            </ul>
+                        @endauth
+                    </li>
+                    <li>
                         <div class="wishlist">
                             <a href="@auth /latest-wishlist @endauth">
-                            <h4 class="no-margin fi flaticon-heart"
+                            <h4 class="no-margin fi flaticon-heart" style="color:black"
                                 @auth
 
                                 @if(\App\Models\WishlistItem::where('user_id',Auth::id())->count() > 0)
@@ -115,8 +102,8 @@
                             ></h4>
                             </a>
                         </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-3">
+                    </li>
+                    <li>
                         <div id="cart">
                             <cart ref="cart"></cart>
                         </div>
@@ -129,55 +116,66 @@
                                                                         placement : "bottom-start",
                                                                         interactive : true,
                                                                         trigger : "click" }'>
-                            <h4 class="no-margin fi flaticon-bag"
+                            <h4 class="no-margin fi flaticon-bag" style="color: black"
                                 :class="{'filled':$store.state.cart.items.length}"></h4>
                         </div>
-                        {{-- @if(\App\Models\DailyDeal::currntDeals()->first() )
-                            <a href="{{route('daily-deals')}}" class="daily-deal" id="daily-deal-countdown">
-                                <div class="col-xs-3">
-                                    <h1 class="no-margin glyphicon glyphicon-gift"></h1>
-                                </div>
-                                <div class="col-xs-9">
-
-                                    <h4 class="no-margin">صفقة اليوم</h4>
-                                    <h4 class="text-red no-margin">
-                                        <countdown
-                                                value="{{\App\Models\DailyDeal::currntDeals()->first()->end_date}}"></countdown>
-                                    </h4>
-                                </div>
-                            </a>
-                        @endif --}}
-                    </div>
+                    </li>
+                    <li>
+                        <a href="{{route('lang')}}" style="color: black">@lang('عربي')</a>
+                    </li>
+                </ul>
+                <div>
+                    <a href="/"><img src="{{asset('imgs/logo.png')}}" alt=""></a>
+                </div>
+            </nav>
+            <div class="categories-bar hidden-xs">
+                <div class="main-container">
+                <ul class="nav navbar-nav hidden-xs">
+                    <li>
+                        <a href="/">@lang('Home')</a>
+                    </li>
+                    @foreach($superCategories as $superCategory)
+                        <li class="dropdown">
+                            <a href="{{route('category',$superCategory->id)}}">{{$superCategory->theName}}</a>
+                            @if(count($superCategory->categories) > 0 )
+                            <ul class="dropdown-content">
+                                @foreach($superCategory->categoriesActive as $category)
+                                    <li><a href="{{route('category',$category->id)}}">{{$category->theName}}</a></li>
+                                @endforeach
+                            </ul>
+                            @endif
+                        </li>
+                    @endforeach
+                    <li>
+                        <a href="/packages">@lang("Subscriptions")</a>
+                    </li>
+                </ul>
                 </div>
             </div>
+        </header>
+        <div>
+            @if(request()->is('/'))
+            <main>
+                <div class="main-container" >
+                    <img src="{{asset('imgs/hero.jpg')}}"/>
+                    <div class="hero-text">
+                        <h1>@lang("Discover the Amazing Farida Flowers") </h1>
+                        <p>@lang("FREE Delivery For Orders More than 150 SAR") </p>
+                        {{-- <button style="
+                            @if(app()->getLocale() == 'ar')margin-right:0px;@endif
+                        ">تسوق الان</button> --}}
+                    </div>
+                </div>
+            </main>
+            @endif
+            <div class="container-fluid">
+                @yield('content')
+            </div>
         </div>
-    </div>
-    <div class="categories-bar">
-        <div class="container">
-        <ul class="nav navbar-nav hidden-xs">
-            <li>
-                <a href="/">@lang('Home')</a>
-            </li>
-            @foreach($superCategories as $superCategory)
-                <li class="dropdown">
-                    <a href="{{route('category',$superCategory->id)}}">{{$superCategory->theName}}</a>
-                    @if(count($superCategory->categories) > 0 )
-                    <ul class="dropdown-content">
-                        @foreach($superCategory->categoriesActive as $category)
-                            <li><a href="{{route('category',$category->id)}}">{{$category->theName}}</a></li>
-                        @endforeach
-                    </ul>
-                    @endif
-                </li>
-            @endforeach
-            <li>
-                <a href="/packages">الإشتراكات</a>
-            </li>
-        </ul>
-        </div>
-    </div>
-    <div class="container-fluid">
-        @yield('content')
+        <transition name="v-modal">
+            <login v-if="showLogin" action="{{ route('login') }}"></login>
+            <register v-if="showRegister" action="{{ route('register') }}"></register>
+        </transition>
     </div>
     <footer>
         {{-- <div class="container">
@@ -202,7 +200,7 @@
                 <div class="clearfix"></div>
             </div>
         </div> --}}
-        <div class="container-fluid">
+        <div class="container">
             {{-- <div class="row">
                 <div class="container">
                     <div class="col-sm-4 col-xs-12 margin-bottom-xs support-details no-padding">
@@ -235,8 +233,8 @@
                 </div>
             </div> --}}
             <div class="row">
-                <div class="about flex">
-                    <div class="brief text-dark">
+                <div class="about">
+                    <div class="brief text-dark col-md-4 col-xs-12">
                         {{-- <img src="{{asset('imgs/logo.png')}}" alt=""> --}}
                         <h4>ورود فريدة</h4>
                         <p class="text-justify">
@@ -247,7 +245,7 @@
                             <a href="#" target="_blank"><img src="{{asset('imgs/maroof.png')}}" /></a>
                         </p>
                     </div>
-                    <div class="support ">
+                    <div class="support col-md-4 col-xs-12">
                         <div class="col-sm-12 col-xs-12 margin-bottom-xs">
                             <h4 class="text-bold text-dark">@lang('We are always ready to help you')</h4>
                             <h6 class="text-dark">@lang('Connect with us through any of the following channels')</h6>
@@ -274,8 +272,8 @@
                     </div>
                     <div class="quick-access">
                         <div class="col-sm-6 col-xs-12">
-                            <h4 class="text-bold text-dark">@lang('Quick Links')</h4>
                             @if (count(\App\Models\Page::where('is_active', 1)->get()) > 0)
+                            <h4 class="text-bold text-dark">@lang('Quick Links')</h4>
                                 @foreach (\App\Models\Page::all() as $page)
                                 <a href="/pages/{{$page->id}}"><h5 class="col-sm-12 col-xs-12 no-padding">{{$page->theTitle}}</h5></a>
                                 @endforeach
@@ -316,24 +314,17 @@
             </div>
         </div>
     </footer>
-    <transition name="v-modal">
-        <login v-if="showLogin" action="{{ route('login') }}"></login>
-        <register v-if="showRegister" action="{{ route('register') }}"></register>
-    </transition>
-</div>
-
-<a href="https://api.whatsapp.com/send?phone=966554718784" class="whatsapp-floating-icon fixed-top">
-    <span class="fi flaticon-whatsapp text-white m-auto"></span>
-</a>
-
-
-<!-- Scripts -->
-<script src="{{ mix('js/app.js') }}"></script>
-@yield('js')
-<script type="text/javascript"> 
-    var wpwlOptions = {
-        locale: 'ar'
-    }
-</script>
+    <a href="https://api.whatsapp.com/send?phone=966554718784" class="whatsapp-floating-icon fixed-top">
+        <span class="fi flaticon-whatsapp text-white m-auto"></span>
+    </a>
+    <!-- Scripts -->
+    
+    <script src="{{ mix('js/app.js') }}"></script>
+    @yield('js')
+    <script type="text/javascript"> 
+        var wpwlOptions = {
+            locale: 'ar'
+        }
+    </script>
 </body>
 </html>

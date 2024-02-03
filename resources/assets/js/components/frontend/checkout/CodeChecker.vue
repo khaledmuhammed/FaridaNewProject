@@ -1,14 +1,16 @@
 <template>
     <div>
-        <div class="col-xs-7 col-md-8">
+        <div class="col-md-4">
             <div class="form-group no-margin"
                  :class="{'has-error':errors.code, 'has-success':validCoupon}">
-                <input v-model="code" class="form-control input-md coupon " :placeholder="$t('Do you have a coupon?')"
-                       @input="errors=[]"/>
+                <input v-model="code" class="form-control input-lg coupon " :placeholder="$t('Do you have a coupon?')"
+                       @input="errors=[]"
+                       style="height: 55px;"
+                       />
             </div>
         </div>
-        <div class="col-xs-5 col-md-4">
-            <button class="btn btn-primary btn-block btn-md " @click="checkCode">
+        <div class="col-md-4">
+            <button class="btn btn-primary" @click="checkCode">
                 <span v-if="!isLoading">{{$t('Validate')}}</span>
                 <div class="spinner" v-else>
                     <div class="rect1"></div>
@@ -243,5 +245,7 @@
     .text-green {
         color : $brand-success !important;
     }
+
+
 
 </style>

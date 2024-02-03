@@ -6,26 +6,30 @@
             <!-- <p>{{$t('Select Shipping Address')}}</p> -->
         </div>
         
-        <template v-for="address in address_list">
-            <!-- <label @click="selectAddress(address.id)">
-                <input type="radio" :value="address.id" v-model="address_id" />
-                <span class="name">{{address.name}}</span>، 
-                <span class="city">{{address.city.name_ar}}</span>،
-                <span class="details" v-if="address.details">{{address.details}}،</span>
-                <span class="details" v-if="address.district">{{address.district}}،</span>
-                <span class="details" v-if="address.street">{{address.street}}</span>
-            </label> -->
-            <div class="card" :class="{active:$store.state.checkout.address === address.id}"
-                 @click="selectAddress(address.id)">
-                <b class="name-label">{{$t('Name')}}</b>
-                <span class="name">{{address.name}}</span>
-                <b class="city-label">{{$t('City')}}</b>
-                <span class="city">{{address.city.name_ar}}</span>
-                <b class="details-label">{{$t('Description')}}</b>
-                <span class="details">{{address.district.name_ar}}, {{address.details}}</span>
-            </div>
-        </template>
-        <div class="add btn btn-outline" @click="addAddress()">
+        <div class="row">
+            <template v-for="address in address_list">
+                <!-- <label @click="selectAddress(address.id)">
+                    <input type="radio" :value="address.id" v-model="address_id" />
+                    <span class="name">{{address.name}}</span>، 
+                    <span class="city">{{address.city.name_ar}}</span>،
+                    <span class="details" v-if="address.details">{{address.details}}،</span>
+                    <span class="details" v-if="address.district">{{address.district}}،</span>
+                    <span class="details" v-if="address.street">{{address.street}}</span>
+                </label> -->
+                <div class="col-md-4">
+                    <div class="card" :class="{active:$store.state.checkout.address === address.id}"
+                        @click="selectAddress(address.id)">
+                        <b class="name-label">{{$t('Name')}}</b>
+                        <span class="name">{{address.name}}</span>
+                        <b class="city-label">{{$t('City')}}</b>
+                        <span class="city">{{address.city.name_ar}}</span>
+                        <b class="details-label">{{$t('Description')}}</b>
+                        <span class="details">{{address.district.name_ar}}, {{address.details}}</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="btn btn-primary" style="margin-top: 15px;" @click="addAddress()">
             <b>+ {{$t('Add New Address')}}</b>
         </div>
         <new-address ref="address" :route="route"></new-address>
@@ -88,6 +92,11 @@
         justify-content : right;
         cursor          : pointer;
         font-size       : 13px;
+        border-radius: 25px;
+        margin        : 10px auto !important;
+        padding       : 30px 10px;
+        border : 3px solid transparent;
+        transition: all 0.3s ease-in-out;
         .name-label {
             grid-area : name-label;
         }
@@ -107,7 +116,12 @@
             grid-area : details;
         }
         &.active {
-            border : 2px solid $brand-primary;
+            border : 3px solid $brand-primary;
+            box-shadow: 0em -0.4rem 0em $brand-primary inset
+        }
+        &:hover{
+            border : 3px solid $brand-primary;
+            box-shadow: 0em -0.4rem 0em $brand-primary inset
         }
     }
 

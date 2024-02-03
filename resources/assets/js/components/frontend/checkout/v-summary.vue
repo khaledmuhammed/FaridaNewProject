@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="col-xs-12">
+    <div style="margin-top: 25px;">
+        <div class="col-md-4">
             <div class="step-header">
                 <span class="step-num ">4</span>
                 <strong>{{$t('Order Summary')}}</strong>
@@ -151,7 +151,7 @@
         <code-checker ref="codeChecker"></code-checker>
         <br>
         <div class="summary">
-            <div class="col-xs-12">
+            <div class="col-md-4" style="font-size: 2rem;font-weight: 700;">
                 {{$t('Total Items')}}
                 <span class="pull-left">{{$store.state.cart.prices.totalPrice.toFixed(2)}}ر.س.</span>
                 <br>
@@ -220,7 +220,8 @@
                 </template> 
                 <template v-else>
                     <span class="btn btn-primary btn-block btn-lg"
-                        @click="validateCheckout()">
+                        @click="validateCheckout()"
+                        style="margin-bottom: 150px;">
                         <strong v-if="!isLoading">{{$t('Confirm Purchase')}}</strong>
                         <div class="spinner" v-else>
                             <div class="rect1"></div>
@@ -642,6 +643,7 @@
         margin-bottom : 20px
 
         .summary
+            
             line-height : 33px
             a.btn
                 margin-top : 30px

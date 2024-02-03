@@ -353,6 +353,7 @@ export default {
         "Testimonial"                                                                                : "رأي عميل",
         "Username"                                                                                   : "اسم العميل",
         "Featured"                                                                                   : "مميز",
+        "Subscriptions"                                                                              : "الاشتراكات",
         "You can click here or drag the image to be uploaded"                                        : "بإمكانك الضعظ هنا أو سحب الصورة ليتم رفعها",
         "?"                                                                                          : "؟",
         "-"                                                                                          : "-",

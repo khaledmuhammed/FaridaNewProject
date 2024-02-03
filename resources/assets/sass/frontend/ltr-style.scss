@@ -1,7 +1,10 @@
 html, body {
     direction: ltr !important;
 }
-
+.dropdown-menu{
+    left: 0;
+    text-align: left;
+  }
 .c-navbar {
     .bar  {
         .links { 

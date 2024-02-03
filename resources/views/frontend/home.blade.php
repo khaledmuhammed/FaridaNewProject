@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="row">
-            <browser :categories="{{\App\Models\Category::where('is_featured',true)->where('is_active',true)->take(6)->get()}}"></browser>
+            <browser :categories="{{\App\Models\Category::where('is_featured',true)->where('is_active',true)->take(9)->get()}}"></browser>
         </div>
         
         <div class="row">
@@ -29,7 +29,7 @@
                 <position name="home.under.categories"></position>
             </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <br>
             <h2 class="text-center text-primary">آراء العملاء</h2>
             <carousel :autoplay="true" dir="ltr"
@@ -41,7 +41,7 @@
                     <img src="{{$testimonial->getFirstMedia('thumbnail')->getUrl()}}" width="200" />
                 @endforeach
             </carousel>
-        </div>
+        </div> --}}
         {{-- <div class="row">
             <div class="position ">
                 <position name="home.under.testimonials"></position>

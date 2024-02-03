@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="payment-container">
         <div class="step-header" :class="{'step-success' :$store.state.checkout.payment}">
             <span class="step-num ">3</span>
             <span class="step-title">{{$t('Payment Methods')}}</span>
@@ -148,5 +148,10 @@
 
 <style lang="sass" scoped>
     /*@import "~styles/frontend/variables"*/
-
+    .payment-container
+        padding-left: 75px
+        padding-right: 75px
+        @media (max-width: 767px)
+            padding-left: 0px
+            padding-right: 0px
 </style>

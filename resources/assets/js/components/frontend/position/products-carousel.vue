@@ -1,13 +1,9 @@
 <template>
     <div>
-        <carousel :autoplay="true" dir="ltr"
-                  :responsive="size != 12 ? {0:{items:2,nav:false},600:{items:3,nav:true},800:{items:4,nav:true}} : {0:{items:2,nav:false}}"
-                  :loop="false"
-                  :dots="false"
-                  :stagePadding="size != 12 ? 0 : 0">
+        <div class="row">
             <featured-product v-for="(product,index) in products" :key="index" v-if="show"
                               :product="product"></featured-product>
-        </carousel>
+                            </div>
         <sweet-modal icon="success" ref="modal">
             <h4>
                 <span>{{$t('Has been added')}}
