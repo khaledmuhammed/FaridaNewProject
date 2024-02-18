@@ -105,13 +105,12 @@
             font-weight: 800
             font-size:  1.2em
             border: 3px solid transparent
-            box-shadow: 0em -0.4rem 0em $brand-primary inset
             transition: all 0.3s ease-in-out
             
             &:hover
                 background-color: $brand-secondary
-                color: $brand-primary
-                border: 3px solid $brand-primary
+                color: #ffffff
+                border: 3px solid #ffffff
 
     .product
         margin-top : 10px

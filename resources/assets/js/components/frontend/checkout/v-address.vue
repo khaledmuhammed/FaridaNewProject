@@ -116,12 +116,12 @@
             grid-area : details;
         }
         &.active {
-            border : 3px solid $brand-primary;
-            box-shadow: 0em -0.4rem 0em $brand-primary inset
+            border : 3px solid $brand-secondary;
+            box-shadow: 0em -0.4rem 0em $brand-secondary inset
         }
         &:hover{
-            border : 3px solid $brand-primary;
-            box-shadow: 0em -0.4rem 0em $brand-primary inset
+            border : 3px solid $brand-secondary;
+            box-shadow: 0em -0.4rem 0em $brand-secondary inset
         }
     }
 
