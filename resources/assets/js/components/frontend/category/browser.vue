@@ -52,7 +52,7 @@
         padding: 10px
         .category
             padding: 10px
-            box-shadow: rgba(154, 1, 32, 0.4) -5px 5px, rgba(154, 1, 32, 0.3) -10px 10px, rgba(154, 1, 32, 0.2) -15px 15px, rgba(154, 1, 32, 0.1) -20px 20px, rgba(154, 1, 32, 0.05) -25px 25px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             border-radius: 25px
         img
             width : 100%
