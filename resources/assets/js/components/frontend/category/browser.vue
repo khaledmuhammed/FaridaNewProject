@@ -39,6 +39,7 @@
             font-weight: 900
             font-size: 24px   
             padding-right: 15px
+            color: $brand-secondary
         @media (max-width: 767px)
             margin-left : 25px
             margin-right : 25px
